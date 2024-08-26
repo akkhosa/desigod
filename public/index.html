@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desigod</title>
+    <meta name="description" content="Desigod - Discover and explore creative content including videos, categories, and more. Join us today and enhance your creative journey.">
+    <link rel="canonical" href="https://www.desigod.com/">
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="header text-white p-3 d-flex justify-content-between align-items-center">
+        <div class="logo">
+            <h1 class="mb-0" style="font-family: 'Abril Fatface', serif;">Desigod</h1>
+        </div>
+        <nav class="d-none d-md-flex" aria-label="Main navigation">
+            <ul class="nav">
+                <li class="nav-item"><a href="#" class="nav-link text-white" aria-label="Navigate to Home">Home</a></li>
+                <li class="nav-item"><a href="#" class="nav-link text-white" aria-label="Sort by Newest">Newest</a></li>
+                <li class="nav-item"><a href="#" class="nav-link text-white" aria-label="Sort by Most Viewed">Most Viewed</a></li>
+                <li class="nav-item"><a href="#" class="nav-link text-white" aria-label="Sort by Longest">Longest</a></li>
+            </ul>
+        </nav>
+        <div class="d-flex align-items-center">
+            <button class="btn btn-outline-light d-md-none" onclick="toggleMenu()" aria-label="Toggle Menu">&#9776;</button>
+            <button id="dark-mode-toggle" class="btn btn-outline-light ms-2" aria-label="Toggle dark mode">Dark Mode</button>
+        </div>
+    </header>
+
+    <nav class="bg-danger text-white p-3 d-md-none d-none" id="mobile-menu" aria-label="Mobile Menu">
+        <ul class="nav flex-column">
+            <li class="nav-item"><a href="#" class="nav-link text-white" aria-label="Navigate to Home">Home</a></li>
+            <li class="nav-item"><a href="#" class="nav-link text-white" aria-label="Sort by Newest">Newest</a></li>
+            <li class="nav-item"><a href="#" class="nav-link text-white" aria-label="Sort by Most Viewed">Most Viewed</a></li>
+            <li class="nav-item"><a href="#" class="nav-link text-white" aria-label="Sort by Longest">Longest</a></li>
+        </ul>
+    </nav>
+
+    <main class="container mt-4">
+        <section class="col-md-12">
+            <h2>Latest Videos</h2>
+            <div id="video-grid" class="row g-3 video-grid">
+                <!-- Dynamic video cards will be injected here by index.js -->
+            </div>
+
+            <!-- Pagination -->
+            <nav aria-label="Page navigation" class="mt-4">
+                <ul class="pagination justify-content-center">
+                    <li class="page-item"><a class="page-link" href="#" aria-label="Previous">&laquo; Previous</a></li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item"><a class="page-link" href="#" aria-label="Next">Next &raquo;</a></li>
+                </ul>
+            </nav>
+        </section>
+    </main>
+
+    <footer class="bg-dark text-white text-center p-3">
+        <p>All rights reserved. Powered by Desigod.</p>
+    </footer>
+
+    <div id="video-modal" class="modal" tabindex="-1" role="dialog" aria-labelledby="video-modal-label" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close-btn btn-close" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-0">
+                    <video controls class="w-100">
+                        <source id="video-source" src="" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="main.js"></script>
+    <script src="page.js"></script>
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/sw.js')
+            .then(registration => {
+                console.log('Service Worker registered with scope:', registration.scope);
+            }).catch(error => {
+                console.error('Service Worker registration failed:', error);
+            });
+        }
+    </script>
+</body>
+
+</html>
+

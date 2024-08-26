@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desigod Video Player</title>
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header text-white p-3 d-flex justify-content-between align-items-center">
+        <div class="logo">
+            <h1 class="mb-0" style="font-family: 'Abril Fatface', serif;">Desigod</h1>
+        </div>
+        <nav class="d-none d-md-flex" aria-label="Main navigation">
+            <ul class="nav">
+                <li class="nav-item"><a href="#" class="nav-link text-white" aria-label="Home">Home</a></li>
+                <li class="nav-item"><a href="#" class="nav-link text-white" aria-label="Newest">Newest</a></li>
+                <li class="nav-item"><a href="#" class="nav-link text-white" aria-label="Most Viewed">Most Viewed</a></li>
+                <li class="nav-item"><a href="#" class="nav-link text-white" aria-label="Longest">Longest</a></li>
+            </ul>
+        </nav>
+        <div class="d-flex align-items-center">
+            <button class="btn btn-outline-light d-md-none" onclick="toggleMenu()" aria-label="Toggle Menu">&#9776;</button>
+            <button id="dark-mode-toggle" class="btn btn-outline-light ms-2" aria-label="Toggle Dark Mode">Dark Mode</button>
+        </div>
+    </header>
+
+    <nav class="bg-danger text-white p-3 d-md-none d-none" id="mobile-menu" aria-label="Mobile Menu">
+        <ul class="nav flex-column">
+            <li class="nav-item"><a href="#" class="nav-link text-white" aria-label="Home">Home</a></li>
+            <li class="nav-item"><a href="#" class="nav-link text-white" aria-label="Newest">Newest</a></li>
+            <li class="nav-item"><a href="#" class="nav-link text-white" aria-label="Most Viewed">Most Viewed</a></li>
+            <li class="nav-item"><a href="#" class="nav-link text-white" aria-label="Longest">Longest</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container mt-4">
+        <!-- Video Player Section -->
+        <section class="row mb-4">
+            <div class="col-lg-10 offset-lg-1 main-video-grid">
+                <div class="video-container">
+                    <video id="main-video" controls aria-label="Main video player">
+                        <source id="main-video-source" src="" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="video-controls mt-2">
+                        <button class="btn btn-sm btn-light">Play</button>
+                        <span class="text-white">00:00 / 03:00</span>
+                        <div>
+                            <button class="btn btn-sm btn-light">Mute</button>
+                            <button class="btn btn-sm btn-light">Fullscreen</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-10 offset-lg-1 video-details mt-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 id="video-title" class="card-title">Video Title</h3>
+                        <p id="video-views" class="card-text"><strong>Views:</strong> 1000</p>
+                        <p id="video-rating" class="card-text"><strong>Rating:</strong> 95%</p>
+                        <p id="video-description" class="card-text">This is a video description.</p>
+                        <div id="video-tags" class="mb-3">
+                            <!-- Tags will be dynamically inserted here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Suggested Videos Section -->
+        <section class="mb-4">
+            <h4>Suggested Videos</h4>
+            <div id="suggested-videos" class="suggested-videos row g-3">
+                <!-- Dynamic video cards will be inserted here -->
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-dark text-white text-center p-3 mt-4">
+        <p>All rights reserved. Powered by Desigod.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="page.js"></script>
+</body>
+
+</html>
+
